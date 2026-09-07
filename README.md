@@ -20,3 +20,6 @@ to ulike tallene.
 
 ### Oppgave 3
 https://www.geeksforgeeks.org/dsa/count-distinct-elements-in-an-array/
+
+### Oppgave 4
+Benyttet boblesortering fra delkapitel 1.3.3.

@@ -58,10 +58,38 @@ public class Oblig1 {
     }
 
     // Oppgave 3
-    public static int antallUlikeUsortert(int[] a) {throw new UnsupportedOperationException();}
+    public static int antallUlikeUsortert(int[] a) {
+            if (a.length < 1) return 0;
+
+            int sum = 1; //Teller antall ulike.
+            int lengde = a.length; //Hjelpevariabel lik tabellens lengde
+
+            for (int i = 1; i < lengde; i++) {
+                int j;
+                for (j = 0; j <i; j++) {
+                    if (a[i] == a[j]) break;
+                }
+
+                if (i == j) sum++;
+            }
+            return sum;
+        }
+
 
     // Oppgave 4
-    public static void sorter(int[] a, int fra, int til) {throw new UnsupportedOperationException();}
+    public static void sorter(int[] a, int fra, int til) {
+        if ( til > a.length-1 || fra < 0) throw new IndexOutOfBoundsException("Øver grense for intervall er for høy!");
+
+        for (int i=fra; i < til-1; i++) { //Til -1 for å ikke inkludere grenseindeksen.
+            int temp; //Holder verdi midlertidig
+            if (a[i] > a[i+1]) {
+                temp = a[i];
+                a[i] = a[i+1];
+                a[i+1] = temp;
+            }
+
+        }
+    }
 
     // Oppgave 5
     public static void delsortering(int[] a) {throw new UnsupportedOperationException();}

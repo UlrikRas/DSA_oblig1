@@ -38,6 +38,7 @@ public class opg {
     }
 
     //Oppgave 3
+    /*
     public static int antallUlikeUsortert(int[] a) {
         if (a.length < 1) return 0;
         int sum = 1; //Teller antall ulike.
@@ -52,12 +53,25 @@ public class opg {
             if (i == j) sum++;
         }
         return sum;
-        }
+        } */
 
+    public static void sorter(int[] a, int fra, int til) {
+        if ( til > a.length-1 || fra < 0) throw new IndexOutOfBoundsException("Øver grense for intervall er for høy!");
+
+        for (int i=fra; i < til-1; i++) { //Til -1 for å ikke inkludere grenseindeksen.
+            int temp; //Holder verdi midlertidig
+            if (a[i] > a[i+1]) {
+                temp = a[i];
+                a[i] = a[i+1];
+                a[i+1] = temp;
+            }
+
+        }
+    }
 
     static void main() {
-        int[] a = {3, 5, 4, 3, 5, 6, 7, 9, 7, 8};
-
-        System.out.println(antallUlikeUsortert(a));
+        int[] a = {6, 10, 9, 4, 1, 3, 8, 5, 2, 7};
+        sorter(a, 3, 8);
+        System.out.println(java.util.Arrays.toString(a));
     }
 }
