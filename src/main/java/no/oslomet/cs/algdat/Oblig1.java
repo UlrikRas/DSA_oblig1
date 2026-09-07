@@ -54,7 +54,8 @@ public class Oblig1 {
             if (a[j] < a[i]) sum++;
             j++;
         }
-        return sum;}
+        return sum;
+    }
 
     // Oppgave 3
     public static int antallUlikeUsortert(int[] a) {throw new UnsupportedOperationException();}
