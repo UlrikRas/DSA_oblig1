@@ -11,8 +11,10 @@ I oppgaven har vi hatt følgende arbeidsfordeling:
 ## Oppgavebeskrivelser
 
 ### Oppgave 1
-Fulgte fremgngsmåten fra eksempel 1.1.2 i læreboken og modifiserte koden i henhold til oppgaven.
+Fulgte fremgangsmåten fra eksempel 1.1.2 i læreboken og modifiserte koden i henhold til oppgaven.
 
 
 ### Oppgave 2
-I oppgave 2 gikk vi frem ved å...
+Skrev bare algoritmen rett frem. Som en omskriving av metoden fra opg.1. Fikk feil i første versjon da 
+sum-variabelen startet på 0. Skjønte da at denne må starte på 1 siden den kun teller 1 for de første
+to ulike tallene.
