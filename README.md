@@ -11,7 +11,8 @@ I oppgaven har vi hatt følgende arbeidsfordeling:
 ## Oppgavebeskrivelser
 
 ### Oppgave 1
-I oppgave 1 gikk vi frem ved å...
+Fulgte fremgngsmåten fra eksempel 1.1.2 i læreboken og modifiserte koden i henhold til oppgaven.
+
 
 ### Oppgave 2
 I oppgave 2 gikk vi frem ved å...
