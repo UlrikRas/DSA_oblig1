@@ -105,10 +105,12 @@ public class Oblig1 {
             while (a[left] % 2 != 0) {
                 left++;
                 odde++;
+                if (left > right) break; //Bryter loopen om ingen partall blir funnet
             }
             //Starter fra høyre og finner første oddetall
             while (a[right] % 2 == 0) {
                 right--;
+                if (right < 0) break; //Bryter loopen om ingen oddetall blir funnet
             }
             //Bytter partallet og oddetallet
             if (left < right) {
@@ -141,7 +143,15 @@ public class Oblig1 {
     }
 
     // Oppgave 6
-    public static void rotasjon(char[] a) {throw new UnsupportedOperationException();}
+    public static void rotasjon(char[] a) {
+        if (a.length < 2) return;
+        char temp = a[a.length-1]; //Tar vare på siste verdi
+        //Tilegener hver indeks verdien til foregående indeks
+        for ( int i = a.length-1; i > 0; i--) {
+            a[i] = a[i-1];
+        }
+        a[0] = temp; //Legger lagret verdi inn på starten
+    }
 
     // Oppgave 7
     public static void rotasjon(char[] a, int k) {throw new UnsupportedOperationException();}

@@ -22,7 +22,11 @@ to ulike tallene.
 https://www.geeksforgeeks.org/dsa/count-distinct-elements-in-an-array/
 
 ### Oppgave 4
-Benyttet boblesortering fra delkapitel 1.3.3. 
+Benyttet boblesortering fra delkapitel 1.3.3. Feilet på tid.
 
 ### Oppgave 5
-Lærebok delkap.1.3.3 for sortering.
+Lærebok delkap.1.3.3 for sortering. Feilet edge cases for kun par/oddetall. Feilet på tid.
+https://www.youtube.com/watch?v=ep8yXQ7xVcE
+
+### Oppgave 6
+Lærebok delkap.1.3.3 for sortering. https://www.geeksforgeeks.org/dsa/c-program-cyclically-rotate-array-one/

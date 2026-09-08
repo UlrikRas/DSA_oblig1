@@ -119,10 +119,19 @@ public class opg {
             }
         }
     }
+    public static void rotasjon(char[] a) {
+        if (a.length < 2) return;
+        char temp = a[a.length-1]; //Tar vare på siste verdi
+        //Tilegener hver indeks verdien til foregående indeks
+        for ( int i = a.length-1; i > 0; i--) {
+            a[i] = a[i-1];
+        }
+        a[0] = temp; //Legger lagret verdi inn på starten
+    }
 
     static void main() {
-        int[] a = {3, 5, 1, 7, 3, 9, 5};
-        delsortering(a);
+        char[] a = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
+        rotasjon(a);
         System.out.println(java.util.Arrays.toString(a));
     }
 }
