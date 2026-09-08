@@ -78,16 +78,18 @@ public class Oblig1 {
 
     // Oppgave 4
     public static void sorter(int[] a, int fra, int til) {
-        if ( til > a.length-1 || fra < 0) throw new IndexOutOfBoundsException("Øver grense for intervall er for høy!");
+        if ( til > a.length || fra < 0) throw new IndexOutOfBoundsException("Øver grense for intervall er for høy!");
 
-        for (int i=fra; i < til-1; i++) { //Til -1 for å ikke inkludere grenseindeksen.
-            int temp; //Holder verdi midlertidig
-            if (a[i] > a[i+1]) {
-                temp = a[i];
-                a[i] = a[i+1];
-                a[i+1] = temp;
+        for (int intervall = til-fra; intervall > 1; intervall--) {
+            for (int i = fra + 1; i < til; i++) { //Til -1 for å ikke inkludere grenseindeksen.
+                int temp; //Holder verdi midlertidig
+                if (a[i] < a[i - 1]) {
+                    temp = a[i];
+                    a[i] = a[i - 1];
+                    a[i - 1] = temp;
+                }
+
             }
-
         }
     }
 

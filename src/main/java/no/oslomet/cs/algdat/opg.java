@@ -1,9 +1,10 @@
+
 package no.oslomet.cs.algdat;
 
 public class opg {
 
     //Oppgave 1
-    /*
+
     public static int maks(int[] a) {
     if (a.length < 1) throw new java.util.NoSuchElementException("Tabellen er tom");
 
@@ -21,7 +22,7 @@ public class opg {
     }
     return bytt;
 
-    } */
+    }
 
     //Oppgave 2
 
@@ -38,7 +39,7 @@ public class opg {
     }
 
     //Oppgave 3
-    /*
+
     public static int antallUlikeUsortert(int[] a) {
         if (a.length < 1) return 0;
         int sum = 1; //Teller antall ulike.
@@ -53,7 +54,7 @@ public class opg {
             if (i == j) sum++;
         }
         return sum;
-        } */
+        }
 
     public static void sorter(int[] a, int fra, int til) {
         if ( til > a.length || fra < 0) throw new IndexOutOfBoundsException("Øver grense for intervall er for høy!");

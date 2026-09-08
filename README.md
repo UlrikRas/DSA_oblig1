@@ -25,3 +25,4 @@ https://www.geeksforgeeks.org/dsa/count-distinct-elements-in-an-array/
 Benyttet boblesortering fra delkapitel 1.3.3. 
 
 ### Oppgave 5
+Lærebok delkap.1.3.3 for sortering.
