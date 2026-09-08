@@ -94,7 +94,51 @@ public class Oblig1 {
     }
 
     // Oppgave 5
-    public static void delsortering(int[] a) {throw new UnsupportedOperationException();}
+    public static void delsortering(int[] a) {
+        int right = a.length-1; //Verdien av siste indeks
+        int left = 0; //Verdien av første indeks
+        int odde = 0; //Teller antall oddetall
+        int temp; //Midlertidig verdilagring
+
+        while (left < right) {
+            //Starter fra venstre og finner første partall
+            while (a[left] % 2 != 0) {
+                left++;
+                odde++;
+            }
+            //Starter fra høyre og finner første oddetall
+            while (a[right] % 2 == 0) {
+                right--;
+            }
+            //Bytter partallet og oddetallet
+            if (left < right) {
+                temp = a[left];
+                a[left] = a[right];
+                a[right] = temp;
+            }
+        }
+
+        //Sorterer oddetall siden
+        for (int j = odde; j > 1; j--) {
+            for (int i = 1; i < odde; i++) {
+                if (a[i] < a[i - 1]) {
+                    temp = a[i];
+                    a[i] = a[i - 1];
+                    a[i - 1] = temp;
+                }
+            }
+        }
+        //Sorterer partall siden
+        for ( int j = a.length-odde; j > 1; j--) {
+            for (int i = odde+1; i < a.length; i++) {
+                if (a[i] < a[i - 1]) {
+                    temp = a[i];
+                    a[i] = a[i - 1];
+                    a[i - 1] = temp;
+                }
+            }
+        }
+    }
 
     // Oppgave 6
     public static void rotasjon(char[] a) {throw new UnsupportedOperationException();}

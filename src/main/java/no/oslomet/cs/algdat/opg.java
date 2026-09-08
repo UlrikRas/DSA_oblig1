@@ -83,10 +83,12 @@ public class opg {
             while (a[left] % 2 != 0) {
                 left++;
                 odde++;
+                if (left > right) break; //Bryter loopen om ingen partall blir funnet
             }
             //Starter fra høyre og finner første oddetall
             while (a[right] % 2 == 0) {
                 right--;
+                if (right < 0) break; //Bryter loopen om ingen oddetall blir funnet
             }
             //Bytter partallet og oddetallet
             if (left < right) {
@@ -119,7 +121,7 @@ public class opg {
     }
 
     static void main() {
-        int[] a = {6, 10, 9, 4, 1, 3, 8, 5, 2, 7};
+        int[] a = {3, 5, 1, 7, 3, 9, 5};
         delsortering(a);
         System.out.println(java.util.Arrays.toString(a));
     }
