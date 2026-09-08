@@ -58,20 +58,66 @@ public class opg {
     public static void sorter(int[] a, int fra, int til) {
         if ( til > a.length-1 || fra < 0) throw new IndexOutOfBoundsException("Øver grense for intervall er for høy!");
 
-        for (int i=fra; i < til-1; i++) { //Til -1 for å ikke inkludere grenseindeksen.
-            int temp; //Holder verdi midlertidig
+
+        for (int intervall = til-fra; intervall > 1; intervall--) {
+            for (int i = fra + 1; i < til; i++) { //Til -1 for å ikke inkludere grenseindeksen.
+                int temp; //Holder verdi midlertidig
+                if (a[i] < a[i - 1]) {
+                    temp = a[i];
+                    a[i] = a[i - 1];
+                    a[i - 1] = temp;
+                }
+
+            }
+        }
+    }
+    //Oppgave 5
+    public static void delsortering(int [] a) {
+        int right = a.length-1; //Verdien av siste indeks
+        int left = 0; //Verdien av første indeks
+        int odde = 0; //Teller antall oddetall
+        int temp; //Midlertidig verdilagring
+
+        while (left < right) {
+            //Starter fra venstre og finner første partall
+            while (a[left] % 2 != 0) {
+                left++;
+                odde++;
+            }
+            //Starter fra høyre og finner første oddetall
+            while (a[right] % 2 == 0) {
+                right--;
+            }
+            //Bytter partallet og oddetallet
+            if (left < right) {
+                temp = a[left];
+                a[left] = a[right];
+                a[right] = temp;
+            }
+        }
+
+        //Sorterer oddetall siden
+        for (int i=0; i < odde-1; i++) {
             if (a[i] > a[i+1]) {
                 temp = a[i];
                 a[i] = a[i+1];
                 a[i+1] = temp;
             }
-
+        }
+        //Sorterer partall siden
+        for (int i=odde; i < right-1; i++) {
+            if (a[i] > a[i+1]) {
+                temp = a[i];
+                a[i] = a[i+1];
+                a[i+1] = temp;
+            }
         }
     }
 
     static void main() {
         int[] a = {6, 10, 9, 4, 1, 3, 8, 5, 2, 7};
-        sorter(a, 3, 8);
+        //delsortering(a);
+        sorter(a, 0, 9);
         System.out.println(java.util.Arrays.toString(a));
     }
 }
