@@ -56,8 +56,7 @@ public class opg {
         } */
 
     public static void sorter(int[] a, int fra, int til) {
-        if ( til > a.length-1 || fra < 0) throw new IndexOutOfBoundsException("Øver grense for intervall er for høy!");
-
+        if ( til > a.length || fra < 0) throw new IndexOutOfBoundsException("Øver grense for intervall er for høy!");
 
         for (int intervall = til-fra; intervall > 1; intervall--) {
             for (int i = fra + 1; i < til; i++) { //Til -1 for å ikke inkludere grenseindeksen.
@@ -97,27 +96,30 @@ public class opg {
         }
 
         //Sorterer oddetall siden
-        for (int i=0; i < odde-1; i++) {
-            if (a[i] > a[i+1]) {
-                temp = a[i];
-                a[i] = a[i+1];
-                a[i+1] = temp;
+        for (int j = odde; j > 1; j--) {
+            for (int i = 1; i < odde; i++) {
+                if (a[i] < a[i - 1]) {
+                    temp = a[i];
+                    a[i] = a[i - 1];
+                    a[i - 1] = temp;
+                }
             }
         }
         //Sorterer partall siden
-        for (int i=odde; i < right-1; i++) {
-            if (a[i] > a[i+1]) {
-                temp = a[i];
-                a[i] = a[i+1];
-                a[i+1] = temp;
+        for ( int j = a.length-odde; j > 1; j--) {
+            for (int i = odde+1; i < a.length; i++) {
+                if (a[i] < a[i - 1]) {
+                    temp = a[i];
+                    a[i] = a[i - 1];
+                    a[i - 1] = temp;
+                }
             }
         }
     }
 
     static void main() {
         int[] a = {6, 10, 9, 4, 1, 3, 8, 5, 2, 7};
-        //delsortering(a);
-        sorter(a, 0, 9);
+        delsortering(a);
         System.out.println(java.util.Arrays.toString(a));
     }
 }
