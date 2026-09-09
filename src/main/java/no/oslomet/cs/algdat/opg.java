@@ -119,6 +119,7 @@ public class opg {
             }
         }
     }
+    //Oppgave 6
     public static void rotasjon(char[] a) {
         if (a.length < 2) return;
         char temp = a[a.length-1]; //Tar vare på siste verdi
@@ -129,9 +130,24 @@ public class opg {
         a[0] = temp; //Legger lagret verdi inn på starten
     }
 
-    static void main() {
-        char[] a = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
-        rotasjon(a);
-        System.out.println(java.util.Arrays.toString(a));
+    //Oppgave8
+    public static String flett(String s, String t) {
+        String flettet = ""; //Blir den nye strengen
+        int i = 0, j = 0;
+        while ( i < s.length() && j < t.length() ) {
+            flettet += s.charAt(i);
+            i++;
+            flettet += t.charAt(j);
+            j++;
+        }
+
+        return flettet;
     }
+
+    static void main() {
+        String s = "ACE"; String t = "BDF";
+        //rotasjon(a);
+        System.out.println(flett(s,t));
+    }
+
 }

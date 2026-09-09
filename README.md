@@ -29,4 +29,6 @@ Lærebok delkap.1.3.3 for sortering. Feilet edge cases for kun par/oddetall. Fei
 https://www.youtube.com/watch?v=ep8yXQ7xVcE
 
 ### Oppgave 6
-Lærebok delkap.1.3.3 for sortering. https://www.geeksforgeeks.org/dsa/c-program-cyclically-rotate-array-one/
+Lærebok delkap.1.x.x for ...... https://www.geeksforgeeks.org/dsa/c-program-cyclically-rotate-array-one/
+
+### Oppgave 8
