@@ -157,9 +157,53 @@ public class Oblig1 {
     public static void rotasjon(char[] a, int k) {throw new UnsupportedOperationException();}
 
     // Oppgave 8
-    public static String flett(String s, String t) {throw new UnsupportedOperationException();}
+    public static String flett(String s, String t) {
+        String flettet = ""; //Blir den nye strengen
+        int i = 0, j = 0;
+        //Håndtering av tom streng
+        if (s.isEmpty()) {
+            flettet = t;
+            return flettet;
+        }
+        else if (t.isEmpty()) {
+            flettet = s;
+            return flettet;
+        }
+        else if (t.isEmpty() && s.isEmpty())  {
+            return flettet;
+        }
+        while ( i < s.length() && j < t.length() ) {
+            flettet += s.charAt(i);
+            i++;
+            flettet += t.charAt(j);
+            j++;
+        }
+        //løkke for resterennde karakterer
+        while (i < s.length()) {
+            flettet += s.charAt(i);
+            i++;
+        }
+        while (j < t.length()) {
+            flettet += t.charAt(j);
+            j++;
+        }
 
-    public static String flett(String... s) {throw new UnsupportedOperationException();}
+        return flettet;
+    }
+
+    public static String flett(String... s) {
+        String flettet = "";
+
+        for (int i=0; i < s.length; i++) {
+
+            for (int j=0; j < s.length; j++) {
+                if (s[j].length()-1 < i) continue;
+                flettet += s[j].charAt(i);
+            }
+        }
+
+        return flettet;
+    }
 
     // Oppgave 9
     public static int[] indeksSortering(int[] a) {throw new UnsupportedOperationException();}

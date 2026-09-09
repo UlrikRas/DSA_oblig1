@@ -130,13 +130,34 @@ public class opg {
         a[0] = temp; //Legger lagret verdi inn på starten
     }
 
-    //Oppgave8
+    //Oppgave8a
     public static String flett(String s, String t) {
         String flettet = ""; //Blir den nye strengen
         int i = 0, j = 0;
+        //Håndtering av tom streng
+        if (s.isEmpty()) {
+            flettet = t;
+            return flettet;
+        }
+        else if (t.isEmpty()) {
+            flettet = s;
+            return flettet;
+        }
+        else if (t.isEmpty() && s.isEmpty())  {
+            return flettet;
+        }
         while ( i < s.length() && j < t.length() ) {
             flettet += s.charAt(i);
             i++;
+            flettet += t.charAt(j);
+            j++;
+        }
+        //løkke for resterennde karakterer
+        while (i < s.length()) {
+            flettet += s.charAt(i);
+            i++;
+        }
+        while (j < t.length()) {
             flettet += t.charAt(j);
             j++;
         }
@@ -144,10 +165,27 @@ public class opg {
         return flettet;
     }
 
+    //Oppgave8b
+    public static String flett(String... s) {
+        String flettet = "";
+
+        for (int i=0; i < s.length; i++) {
+
+            for (int j=0; j < s.length; j++) {
+                if (s[j].length()-1 < i) continue;
+                flettet += s[j].charAt(i);
+            }
+        }
+
+        return flettet;
+    }
+
     static void main() {
-        String s = "ACE"; String t = "BDF";
+        String [] s = {"AM ", "L", "GEDS", "ORATKRR", "",
+                "R TRTE", "IO", "TGAUU"};
         //rotasjon(a);
-        System.out.println(flett(s,t));
+        System.out.println(flett(s));
+        //System.out.println(s[0].charAt(0));
     }
 
 }

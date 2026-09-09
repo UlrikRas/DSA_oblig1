@@ -32,3 +32,4 @@ https://www.youtube.com/watch?v=ep8yXQ7xVcE
 Lærebok delkap.1.x.x for ...... https://www.geeksforgeeks.org/dsa/c-program-cyclically-rotate-array-one/
 
 ### Oppgave 8
+Delkap 1.3.11, syntax for chatAt på w3
