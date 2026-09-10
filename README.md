@@ -12,6 +12,17 @@ Oppgaven er løst av en person.
 ### Oppgave 1
 Fulgte fremgangsmåten fra eksempel 1.1.2 i læreboken og modifiserte koden i henhold til oppgaven.
 
+a) Siden hver sammenligning involverer to tall trengs det en sammenligning for n=2.
+Deretter øker antall sammenligninger lineært med n. Så antallet som en funksjon av n er: antall = n-1
+
+b) Det blir færrest ombyttinger om tabellen allerede er sortert slik at den ikke inneholder noen inversjoner.
+c) Det blir flest ombyttinger om maksverdien ligger i indeks [0]. Da betyr det ikke noe hvordan resten av
+    tabellen er sortert for hver sammenligning vil føre til et ombytte.
+
+d) Antallet ombyttinger avgjøres av startposisjonen til maksverdien. Den kan starte i alle posisjoner fra 1 til n.
+    Ligger den i n blir det 0 ombyttinger. Ligger den i 1 blir det n-1 ombyttinger. FOr hver posisjon den går fra 1 mot n
+    blir det en ombytting mindre. Snittet blir da summen av antall ombytter for de ulike posisjonene til maxverdien,
+    delt på antallet elementer i tabellen. Så antall ombytter blir n-1 + n-2 + ... + 1 (Når n ligger nest sist) delt på n. 
 
 ### Oppgave 2
 Skrev bare algoritmen rett frem. Som en omskriving av metoden fra opg.1. Fikk feil i første versjon da 
@@ -32,4 +43,4 @@ https://www.youtube.com/watch?v=ep8yXQ7xVcE
 Lærebok delkap.1.x.x for ...... https://www.geeksforgeeks.org/dsa/c-program-cyclically-rotate-array-one/
 
 ### Oppgave 8
-Delkap 1.3.11, syntax for chatAt på w3
+Delkap 1.3.11. syntax for chatAt på w3
