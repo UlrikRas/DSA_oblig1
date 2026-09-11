@@ -80,17 +80,26 @@ public class Oblig1 {
     public static void sorter(int[] a, int fra, int til) {
         if ( til > a.length || fra < 0) throw new IndexOutOfBoundsException("Øver grense for intervall er for høy!");
 
-        for (int intervall = til-fra; intervall > 1; intervall--) {
-            for (int i = fra + 1; i < til; i++) { //Til -1 for å ikke inkludere grenseindeksen.
-                int temp; //Holder verdi midlertidig
-                if (a[i] < a[i - 1]) {
-                    temp = a[i];
-                    a[i] = a[i - 1];
-                    a[i - 1] = temp;
-                }
-
+        if (fra >= til-1) return;
+        int pivotIndeks = til-1; //Velger siste tabellelement som indeks
+        int pivotVerdi = a[pivotIndeks]; //Holder verdi av pivotelement
+        int temp; //Variabel for swapping
+        int i = fra-1;
+        for (int j=fra; j < pivotIndeks; j++) {
+            if (a[j] < pivotVerdi) { //Sammenligner element med pivot.
+                i++;
+                temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
             }
         }
+        a[pivotIndeks] = a[i+1];
+        a[i+1] = pivotVerdi;
+
+        int pi= i+1; //Indeks til pivot etter bytte
+
+        sorter(a,fra, pi);
+        sorter(a,pi+1, til);
     }
 
     // Oppgave 5

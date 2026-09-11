@@ -6,22 +6,37 @@ public class opg {
     //Oppgave 1
 
     public static int maks(int[] a) {
-    if (a.length < 1) throw new java.util.NoSuchElementException("Tabellen er tom");
+        if (a.length < 1) throw new java.util.NoSuchElementException("Tabellen er tom");
 
-    int indeks = 0; //Indeks for sammenligning
-    int temp; //Variabel som holder verdi midlertidig
-    int bytt = 0; //Teller for ombytter
-    for (int i=1; i < a.length; i++) {
-        if (a[indeks] > a[i] ) {
-            temp = a[indeks]; //Holder verdi av største tall midlertidig
-            a[indeks] = a[i]; //Legger verdi av minste tall i lavere indeks
-            a[i] = temp; //Legger verdi av største tall i høyere indeks
-            bytt++;
+        int indeks = 0; //Indeks for sammenligning
+        int temp;
+        for (int i=1; i < a.length; i++) {
+            if (a[indeks] > a[i] ) {
+                temp = a[indeks]; //Holder verdi av største tall midlertidig
+                a[indeks] = a[i]; //Legger verdi av minste tall i lavere indeks
+                a[i] = temp; //Legger verdi av største tall i høyere indeks
+            }
+            indeks++;
         }
-        indeks++;
+        return  a[a.length -1];
     }
-    return bytt;
 
+    public static int ombyttinger(int[] a) {
+        if (a.length < 1) throw new java.util.NoSuchElementException("Tabellen er tom");
+
+        int indeks = 0; //Indeks for sammenligning
+        int temp; //Variabel som holder verdi midlertidig
+        int bytt = 0; //Teller for ombytter
+        for (int i=1; i < a.length; i++) {
+            if (a[indeks] > a[i] ) {
+                temp = a[indeks]; //Holder verdi av største tall midlertidig
+                a[indeks] = a[i]; //Legger verdi av minste tall i lavere indeks
+                a[i] = temp; //Legger verdi av største tall i høyere indeks
+                bytt++;
+            }
+            indeks++;
+        }
+        return bytt;
     }
     /*
     a) Siden hver sammenligning involverer to tall trengs det en sammenligning for n=2.
@@ -70,21 +85,32 @@ public class opg {
         return sum;
         }
 
+    //Oppgave 4
     public static void sorter(int[] a, int fra, int til) {
         if ( til > a.length || fra < 0) throw new IndexOutOfBoundsException("Øver grense for intervall er for høy!");
 
-        for (int intervall = til-fra; intervall > 1; intervall--) {
-            for (int i = fra + 1; i < til; i++) { //Til -1 for å ikke inkludere grenseindeksen.
-                int temp; //Holder verdi midlertidig
-                if (a[i] < a[i - 1]) {
-                    temp = a[i];
-                    a[i] = a[i - 1];
-                    a[i - 1] = temp;
-                }
-
+        if (fra >= til-1) return;
+        int pivotIndeks = til-1; //Velger siste tabellelement som indeks
+        int pivotVerdi = a[pivotIndeks]; //Holder verdi av pivotelement
+        int temp; //Variabel for swapping
+        int i = fra-1;
+        for (int j=fra; j < pivotIndeks; j++) {
+            if (a[j] < pivotVerdi) { //Sammenligner element med pivot.
+                i++;
+                temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
             }
         }
+        a[pivotIndeks] = a[i+1];
+        a[i+1] = pivotVerdi;
+
+        int pi= i+1; //Indeks til pivot etter bytte
+
+        sorter(a,fra, pi);
+        sorter(a,pi+1, til);
     }
+
     //Oppgave 5
     public static void delsortering(int [] a) {
         int right = a.length-1; //Verdien av siste indeks
@@ -195,11 +221,10 @@ public class opg {
     }
 
     static void main() {
-        String [] s = {"AM ", "L", "GEDS", "ORATKRR", "",
-                "R TRTE", "IO", "TGAUU"};
-        //rotasjon(a);
-        System.out.println(flett(s));
-        //System.out.println(s[0].charAt(0));
+        int[] a = {6, 10, 9, 4, 1, 3, 8, 5, 2, 7};
+        //int[] a = {10,80,30,90,40};
+        sorter(a,3,8);
+        System.out.println(java.util.Arrays.toString(a));
     }
 
 }

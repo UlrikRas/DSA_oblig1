@@ -33,7 +33,9 @@ to ulike tallene.
 https://www.geeksforgeeks.org/dsa/count-distinct-elements-in-an-array/
 
 ### Oppgave 4
-Benyttet boblesortering fra delkapitel 1.3.3. Feilet på tid.
+Benyttet boblesortering fra delkapitel 1.3.3. Feilet på tid. Satt meg ned med penn og papir og tegnet den opp.
+Første versjon brukte 28833 ms hvor kravet var 100ms. Så ikke bare ineffektiv...
+Implementer
 
 ### Oppgave 5
 Lærebok delkap.1.3.3 for sortering. Feilet edge cases for kun par/oddetall. Feilet på tid.
