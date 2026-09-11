@@ -104,51 +104,20 @@ public class Oblig1 {
 
     // Oppgave 5
     public static void delsortering(int[] a) {
-        int right = a.length-1; //Verdien av siste indeks
-        int left = 0; //Verdien av første indeks
-        int odde = 0; //Teller antall oddetall
-        int temp; //Midlertidig verdilagring
+        if (a.length < 2) return;
+        int odde=0; //Peker på indeks for siste observerte odddtall
+        int temp; //Holder swap verdi
 
-        while (left < right) {
-            //Starter fra venstre og finner første partall
-            while (a[left] % 2 != 0) {
-                left++;
+        for (int i=0; i < a.length; i++) {
+            if (a[i] % 2 != 0) {
+                temp = a[i];
+                a[i] = a[odde];
+                a[odde] = temp;
                 odde++;
-                if (left > right) break; //Bryter loopen om ingen partall blir funnet
-            }
-            //Starter fra høyre og finner første oddetall
-            while (a[right] % 2 == 0) {
-                right--;
-                if (right < 0) break; //Bryter loopen om ingen oddetall blir funnet
-            }
-            //Bytter partallet og oddetallet
-            if (left < right) {
-                temp = a[left];
-                a[left] = a[right];
-                a[right] = temp;
             }
         }
-
-        //Sorterer oddetall siden
-        for (int j = odde; j > 1; j--) {
-            for (int i = 1; i < odde; i++) {
-                if (a[i] < a[i - 1]) {
-                    temp = a[i];
-                    a[i] = a[i - 1];
-                    a[i - 1] = temp;
-                }
-            }
-        }
-        //Sorterer partall siden
-        for ( int j = a.length-odde; j > 1; j--) {
-            for (int i = odde+1; i < a.length; i++) {
-                if (a[i] < a[i - 1]) {
-                    temp = a[i];
-                    a[i] = a[i - 1];
-                    a[i - 1] = temp;
-                }
-            }
-        }
+        sorter(a,0,odde);
+        sorter(a,odde,a.length);
     }
 
     // Oppgave 6

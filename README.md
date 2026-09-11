@@ -40,6 +40,9 @@ Implementer
 ### Oppgave 5
 Lærebok delkap.1.3.3 for sortering. Feilet edge cases for kun par/oddetall. Feilet på tid.
 https://www.youtube.com/watch?v=ep8yXQ7xVcE
+Første implementasjon bruker 14558 ms. Må utbedres, starter med å implementere kvikksort algo fra opg.4
+på sorteringsbiten. Forsto nå utfrqa oppgaveteksten at man skulle bruke metoden fra opg.4. Testen tok likevel 
+11029 ms så åpenbart langt fra nok. 
 
 ### Oppgave 6
 Lærebok delkap.1.x.x for ...... https://www.geeksforgeeks.org/dsa/c-program-cyclically-rotate-array-one/
